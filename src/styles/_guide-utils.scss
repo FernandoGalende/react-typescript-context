@@ -1,0 +1,113 @@
+@import "variables";
+@import "responsive";
+
+%default-color {
+	color: $Black;
+	font-weight: 400;
+}
+
+%hero-title {
+	@extend %default-color;
+	font-size: 2.25rem;
+	@include desktop {
+		font-size: 4rem;
+	}
+}
+
+%text-h1 {
+	@extend %default-color;
+	font-size: 1.5rem;
+	@include desktop {
+		font-size: 3rem;
+	}
+}
+
+%text-h2 {
+	@extend %default-color;
+	font-size: 1.25rem;
+	@include desktop {
+		font-size: 1.5rem;
+	}
+}
+
+%text-h3 {
+	@extend %default-color;
+	font-size: 1.0625rem;
+	@include desktop {
+		font-size: 1.25rem;
+	}
+}
+
+%text-h4 {
+	@extend %default-color;
+	font-size: 0.9375rem;
+	@include desktop {
+		font-size: 1.0625rem;
+	}
+}
+
+%text-h5 {
+	@extend %default-color;
+	font-size: 0.8125rem;
+	@include desktop {
+		font-size: 0.9375rem;
+	}
+}
+
+%text-h6 {
+	@extend %default-color;
+	font-size: 0.6875rem;
+	@include desktop {
+		font-size: 0.8125rem;
+	}
+}
+
+%text-body {
+	@extend %default-color;
+	font-size: 0.9375rem;
+	@include desktop {
+		font-size: 1rem;
+	}
+}
+
+%text-note {
+	@extend %default-color;
+	font-size: 0.6875rem;
+}
+
+// Main colors class helper
+%black {
+	color: $Black;
+}
+
+%grey70 {
+	color: $Grey70;
+}
+
+%grey40 {
+	color: $Grey40;
+}
+
+%grey10 {
+	color: $Grey10;
+}
+
+%background {
+	color: $Background;
+}
+
+%white {
+	color: $White;
+}
+
+%primary {
+	color: $Primary;
+}
+
+%secondary {
+	color: $Secondary;
+}
+
+%error {
+	color: $Error;
+}
