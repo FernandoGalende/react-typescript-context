@@ -1,16 +1,16 @@
 import React from 'react';
 import './Home.module.scss';
 
+import {CitiesConsumer} from '../../../context/cities.context';
+
 const Home: React.FC = () => {
 	return (
 		<div className='Home'>
 			<header className='App-header'>
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
-					Learn React
-				</a>
+				<p>Home component</p>
+				<CitiesConsumer>
+					{(citiesContext) => <h1>{citiesContext && citiesContext.map((city) => <h1>{city.name}</h1>)}</h1>}
+				</CitiesConsumer>
 			</header>
 		</div>
 	);

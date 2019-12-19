@@ -1,9 +1,6 @@
-const cities = {
-	title: 'Brothers of Destruction',
-	artist: 'The Lemon Twigs',
-	genre: 'Rock'
+import getCitiesService from './cities.service';
+
+export {
+	getCitiesService
+	// add more ...
 };
-
-const getAlbumOfTheWeek = () => Promise.resolve({data: cities});
-
-export {getAlbumOfTheWeek};
