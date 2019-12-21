@@ -10,10 +10,11 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({city}) => (
 	<Fragment>
 		<div className='container'>
+			<div className='image-block' />
 			<input type='checkbox' />
 			<div className='text-block'>
 				<h4>{city.name}</h4>
-				<h4>{city.chineseName}</h4>
+				<h5>{city.chineseName}</h5>
 			</div>
 		</div>
 	</Fragment>

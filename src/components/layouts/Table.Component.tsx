@@ -3,7 +3,7 @@ import {CitiesConsumer} from '../../context/cities.context';
 
 import Card from '../commons/Card/Card.component';
 import SearchBar from '../commons/SearchBar/SearchBar.component';
-import TotalSelect from '../commons/Total/total.component';
+import TotalSelect from '../commons/Total/Total.component';
 
 import './Table.scss';
 

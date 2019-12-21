@@ -1,4 +1,6 @@
 @import '../../../styles/partials';
+@import "../../../styles/variables";
+@import "../../../styles/guide-utils";
 
 .container {
 	box-sizing: border-box;
@@ -6,10 +8,11 @@
 	display: flex;
 	align-items: center;
 	height: 5em;
+	transition: background-color 300ms;
 	input[type=checkbox] {
 		position: relative;
 		cursor: pointer;
-		margin: 10px;
+		margin-left: 30px;
 	}
 	input[type=checkbox]:before {
 		content: "";
@@ -38,6 +41,28 @@
 		left: 6px;
 	}
 	.text-block {
-		margin-left: 5px;
+		margin-left: 30px;
+		h5 {
+			line-height: normal;
+			@extend %text-h5;
+		}
+		h6 {
+			line-height: normal;
+			@extend %text-h6;
+		}
 	}
+	.image-block {
+		border-radius: 50%;
+		height: 50px;
+		width: 50px;
+		background-image: url("../../../assents/china.svg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		box-sizing: border-box;
+	}
+}
+
+.container:hover {
+	background-color: $Grey10;
 }

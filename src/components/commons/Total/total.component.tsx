@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './total.scss';
+import './Total.scss';
 
 const TotalSelect: React.FC = () => <p>Total</p>;
 
