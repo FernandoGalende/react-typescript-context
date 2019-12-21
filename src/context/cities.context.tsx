@@ -1,18 +1,10 @@
 import React, {createContext, useEffect, useState} from 'react';
-
 import {getCitiesService} from '../services/index';
 
-interface AuxProps {
-	children: React.ReactNode;
-}
+import {City} from '../interfaces/app.interfaces';
+import {AuxProps} from './AuxProps';
 
-interface Cities {
-	'id': string;
-	'name': string;
-	'chineseName': string;
-}
-
-const CitiesContext = createContext<Cities[] | null>(null);
+const CitiesContext = createContext<City[] | null>(null);
 
 const {Provider, Consumer} = CitiesContext;
 
@@ -20,7 +12,7 @@ const CitiesProvider = (props: AuxProps) => {
 	const [cities, setCities] = useState();
 
 	useEffect(() => {
-		getCitiesService().then((res) => {
+		getCitiesService().then(res => {
 			setCities(res.data);
 		});
 	}, []);

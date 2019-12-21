@@ -1,12 +1,7 @@
 import data from '../data/cities-of-china.json';
+import {City} from '../interfaces/app.interfaces';
 
-type cities = {
-	'id': string;
-	'name': string;
-	'chineseName': string;
-};
-
-const getCitiesService = (): Promise<{data: cities[]}> => {
+const getCitiesService = (): Promise<{data: City[]}> => {
 	// Simulate a real api call delay
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {

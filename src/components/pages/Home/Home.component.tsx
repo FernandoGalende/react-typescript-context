@@ -1,17 +1,13 @@
 import React from 'react';
-import './Home.module.scss';
 
-import {CitiesConsumer} from '../../../context/cities.context';
+import TableComponent from '../../layouts/Table.Component';
+
+import './Home.scss';
 
 const Home: React.FC = () => {
 	return (
-		<div className='Home'>
-			<header className='App-header'>
-				<p>Home component</p>
-				<CitiesConsumer>
-					{(citiesContext) => <h1>{citiesContext && citiesContext.map((city) => <h1>{city.name}</h1>)}</h1>}
-				</CitiesConsumer>
-			</header>
+		<div className='home-container'>
+			<TableComponent />
 		</div>
 	);
 };
