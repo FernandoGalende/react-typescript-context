@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchBar.scss';
 
-const SearchBar: React.FC = () => <div className='search-container'>Search...</div>;
+const SearchBar: React.FC = () => <tr className='search-container'>Search...</tr>;
 
 export default SearchBar;

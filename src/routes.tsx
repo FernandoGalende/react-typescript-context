@@ -4,7 +4,7 @@ import {Router, Route, Switch} from 'react-router-dom';
 import Home from './components/pages/Home/Home.component';
 import history from './history';
 
-import {CitiesProvider} from './context/cities.context';
+import {CitiesProvider} from './store/context/cities.context';
 
 const AppRouter = () => (
 	<CitiesProvider>

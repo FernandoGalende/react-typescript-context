@@ -1,5 +1,5 @@
-import React from 'react';
-import {CitiesConsumer} from '../../context/cities.context';
+import React, {useContext} from 'react';
+import {AdminStore} from '../../store/context/cities.context';
 
 import Card from '../commons/Card/Card.component';
 import SearchBar from '../commons/SearchBar/SearchBar.component';
@@ -8,6 +8,8 @@ import TotalSelect from '../commons/Total/Total.component';
 import './Table.scss';
 
 const TableComponent: React.FC = () => {
+	const {state, dispatch} = useContext(AdminStore);
+
 	return (
 		<div className='table-container'>
 			<table>
@@ -26,13 +28,13 @@ const TableComponent: React.FC = () => {
 							<div className='total-container'>
 								<TotalSelect />
 							</div>
-							<CitiesConsumer>
-								{citiesContext => (
-									<div id='items-container'>
-										{citiesContext && citiesContext.map(city => <Card key={city.id} city={city} />)}
-									</div>
-								)}
-							</CitiesConsumer>
+
+							{
+								<div id='items-container'>
+									{state.cities &&
+										state.cities.map((city: any) => <Card key={city.id} city={city} />)}
+								</div>
+							}
 						</td>
 						<td>
 							<h1>selected</h1>
