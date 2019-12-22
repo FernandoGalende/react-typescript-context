@@ -5,7 +5,14 @@ const getCitiesService = (): Promise<{data: City[]}> => {
 	// Simulate a real api call delay
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			resolve({data: data.cities});
+			resolve({
+				data: data.cities.map(city => {
+					return {
+						...city,
+						selected: false
+					};
+				})
+			});
 		}, 500);
 	});
 };

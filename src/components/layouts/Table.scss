@@ -47,7 +47,12 @@
 	}
 }
 
-#items-container {
+.items-container {
 	overflow-x: scroll;
 	height: 50vh;
+}
+
+.items-selected {
+	overflow-x: scroll;
+	height: 67vh;
 }

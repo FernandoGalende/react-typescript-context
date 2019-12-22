@@ -14,3 +14,10 @@ export function selectCity(city: City): SelectCity {
 		payload: city
 	};
 }
+
+export function unSelectCity(city: City): SelectCity {
+	return {
+		type: 'UNSELECT_CITY',
+		payload: city
+	};
+}
