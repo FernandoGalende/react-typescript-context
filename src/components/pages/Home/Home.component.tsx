@@ -7,7 +7,9 @@ import './Home.scss';
 const Home: React.FC = () => {
 	return (
 		<div className='home-container'>
-			<TableComponent />
+			<div className='home-wrap'>
+				<TableComponent />
+			</div>
 		</div>
 	);
 };

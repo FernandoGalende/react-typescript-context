@@ -2,12 +2,12 @@
 @import "../../../styles/variables";
 @import "../../../styles/guide-utils";
 
-.container {
+.card-container {
 	box-sizing: border-box;
-	padding: 30px;
+	padding-left: 30px;
+	height: 4em;
 	display: flex;
 	align-items: center;
-	height: 5em;
 	transition: background-color 300ms;
 	input[type=checkbox] {
 		position: relative;

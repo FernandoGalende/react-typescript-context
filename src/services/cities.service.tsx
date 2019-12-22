@@ -1,5 +1,5 @@
 import data from '../data/cities-of-china.json';
-import {City} from '../interfaces/app.interfaces';
+import {City} from '../store/types';
 
 const getCitiesService = (): Promise<{data: City[]}> => {
 	// Simulate a real api call delay

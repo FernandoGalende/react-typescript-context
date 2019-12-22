@@ -1,7 +1,24 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 import './Total.scss';
 
-const TotalSelect: React.FC = () => <p>Total</p>;
+type TotalSelectedProps = {
+	items: number;
+	onClick: any;
+	buttonText: string;
+};
+
+const TotalSelect: React.FC<TotalSelectedProps> = ({items = 0, onClick, buttonText}) => {
+	return (
+		<Fragment>
+			<div className='total-container'>
+				<p>{items} items</p>
+				<div className='button' onClick={() => onClick()}>
+					{buttonText}
+				</div>
+			</div>
+		</Fragment>
+	);
+};
 
 export default TotalSelect;

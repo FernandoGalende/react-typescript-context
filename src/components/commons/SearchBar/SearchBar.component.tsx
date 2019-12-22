@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './SearchBar.scss';
 
-const SearchBar: React.FC = () => <tr className='search-container'>Search...</tr>;
+const SearchBar: React.FC = () => (
+	<Fragment>
+		<div className='search-container'>Search...</div>
+	</Fragment>
+);
 
 export default SearchBar;

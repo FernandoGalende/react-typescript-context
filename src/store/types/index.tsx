@@ -4,11 +4,12 @@ export interface City {
 	'id': string;
 	'name': string;
 	'chineseName': string;
+	'selected': boolean;
 }
 
 export interface Action {
 	type: string;
-	payload: any;
+	payload?: any;
 }
 
 export interface AuxProps {
@@ -17,20 +18,9 @@ export interface AuxProps {
 
 export interface CitiesState {
 	cities: City[];
-	selectedCities: City[];
 }
 
 export interface ContextProps {
 	state: CitiesState;
 	dispatch: Dispatch<Action>;
-}
-
-export interface AddCities {
-	type: string;
-	payload: City[];
-}
-
-export interface SelectCity {
-	type: string;
-	payload: City;
 }

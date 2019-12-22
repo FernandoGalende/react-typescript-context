@@ -4,7 +4,8 @@ import {AdminStore} from '../../store/context/cities.context';
 import Card from '../commons/Card/Card.component';
 import SearchBar from '../commons/SearchBar/SearchBar.component';
 import TotalSelect from '../commons/Total/Total.component';
-import {selectCity, unSelectCity} from '../../store/actions';
+
+import {selectCity, unSelectCity, unSelectAllCities, selectAllCities} from '../../store/actions';
 
 import './Table.scss';
 
@@ -19,25 +20,44 @@ const TableComponent: React.FC = () => {
 		dispatch(unSelectCity(city.id));
 	};
 
+	const onTotalClik = (mode: string) => {
+		if (mode === 'unSelect') dispatch(unSelectAllCities());
+		if (mode === 'select') dispatch(selectAllCities());
+	};
+
 	return (
 		<div className='table-container'>
 			<table>
 				<caption>
 					<h1>Cities of China</h1>
 				</caption>
-				<th>
-					<SearchBar />
-				</th>
-				<th>
-					<TotalSelect />
-				</th>
 				<tbody>
 					<tr>
 						<td>
+							<SearchBar />
+						</td>
+					</tr>
+					<tr>
+						<td>
 							<div className='total-container'>
-								<TotalSelect />
+								<TotalSelect
+									items={state.cities.filter(city => city.selected === false).length}
+									onClick={() => onTotalClik('select')}
+									buttonText='select All'
+								/>
 							</div>
+						</td>
 
+						<td>
+							<TotalSelect
+								items={state.cities.filter(city => city.selected === true).length}
+								onClick={() => onTotalClik('unSelect')}
+								buttonText='clear'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>
 							{
 								<div className='items-container'>
 									{state.cities &&
@@ -54,16 +74,20 @@ const TableComponent: React.FC = () => {
 						<td>
 							{
 								<div className='items-selected'>
-									{state.selectedCities.length > 0 ? (
-										state.selectedCities.map((city: any) => (
-											<Card
-												key={city.id}
-												city={city}
-												onSelect={(city: any) => onSelectedCity(city)}
-											/>
-										))
+									{state.cities.filter(city => city.selected === true).length > 0 ? (
+										state.cities
+											.filter(city => city.selected === true)
+											.map((city: any) => (
+												<Card
+													key={city.id}
+													city={city}
+													onSelect={(city: any) => onSelectedCity(city)}
+												/>
+											))
 									) : (
-										<span>no cities</span>
+										<div className='not-cities'>
+											<span>no cities</span>
+										</div>
 									)}
 								</div>
 							}

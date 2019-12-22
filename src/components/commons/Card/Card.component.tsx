@@ -1,5 +1,5 @@
-import React, {Fragment, useState} from 'react';
-import {City} from '../../../interfaces/app.interfaces';
+import React, {Fragment} from 'react';
+import {City} from '../../../store/types';
 
 import './Card.scss';
 
@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({city, onSelect}) => {
 
 	return (
 		<Fragment>
-			<div className='container'>
+			<div className='card-container'>
 				<div className='image-block' />
 				<input type='checkbox' onChange={handleChange} checked={city.selected} />
 				<div className='text-block'>
