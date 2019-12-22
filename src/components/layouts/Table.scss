@@ -11,11 +11,10 @@
 
 	table {
 		width: 100%;
-		border: 1px solid $Grey10;
 		background-color: $White;
 		caption {
 			background-color: #ffffff;
-			border: 1px solid #e3e9f1;
+			border-bottom: 1px solid #e3e9f1;
 			height: 3em;
 			width: 100%;
 			flex-direction: row;
@@ -27,12 +26,18 @@
 				align-items: center;
 			}
 		}
-		td {
-			box-sizing: border-box;
-			overflow: hidden;
-			width: 50%;
-			padding: 0;
-			border: 1px solid $Grey10;
+		tr {
+			td:first-child {
+				border-top: 0px;
+				border-right: 1px solid $Grey10;
+			}
+			td {
+				box-sizing: border-box;
+				overflow: hidden;
+				width: 50%;
+				padding: 0;
+				border-top: 1px solid $Grey10;
+			}
 		}
 	}
 	.total-container {
@@ -41,6 +46,8 @@
 		display: flex;
 		align-items: center;
 		height: 5em;
+		border-top: 1px solid $Grey10;
+		border-bottom: 1px solid $Grey10;
 	}
 }
 

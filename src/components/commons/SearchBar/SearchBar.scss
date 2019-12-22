@@ -1,7 +1,54 @@
+@import "../../../styles/variables";
+
 .search-container {
-	box-sizing: border-box;
-	padding-left: 30px;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	height: 5em;
+}
+
+.text-input {
+	position: relative;
+	label {
+		font-size: 1em;
+	}
+
+	input[type="text"] {
+		font-size: 1.5em;
+		display: inline-block;
+		width: 500px;
+		height: 40px;
+		box-sizing: border-box;
+		outline: none;
+		border: 0px;
+		padding: 10px 10px 10px 100px;
+		transition: all 0.1s ease-out;
+	}
+
+	input[type="text"] + label {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		height: 40px;
+		line-height: 40px;
+		color: $Black;
+		border-radius: 3px 0 0 3px;
+		padding: 0 30px;
+		transform: translateZ(0) translateX(0);
+		transition: all 0.3s ease-in;
+		transition-delay: 0.2s;
+	}
+
+	input[type="text"]:focus + label {
+		transform: translateY(-80%) translateX(0%);
+		transition: all 0.1s ease-out;
+	}
+
+	input[type="text"]:focus {
+		padding-left: 30px;
+		transition: all 0.3s ease-out;
+		transition-delay: 0.2s;
+	}
 }

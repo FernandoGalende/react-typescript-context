@@ -18,6 +18,7 @@ export interface AuxProps {
 
 export interface CitiesState {
 	cities: City[];
+	showableCities: City[];
 }
 
 export interface ContextProps {

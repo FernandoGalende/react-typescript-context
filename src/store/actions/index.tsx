@@ -33,3 +33,9 @@ export function selectAllCities(): Action {
 		type: 'SELECT_ALL_CITIES'
 	};
 }
+export function filterShowableCities(value: string): Action {
+	return {
+		type: 'FILTER_SHOWABLE_CITIES',
+		payload: value
+	};
+}

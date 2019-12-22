@@ -5,12 +5,13 @@ import Card from '../commons/Card/Card.component';
 import SearchBar from '../commons/SearchBar/SearchBar.component';
 import TotalSelect from '../commons/Total/Total.component';
 
-import {selectCity, unSelectCity, unSelectAllCities, selectAllCities} from '../../store/actions';
+import {selectCity, unSelectCity, unSelectAllCities, selectAllCities, filterShowableCities} from '../../store/actions';
 
 import './Table.scss';
 
 const TableComponent: React.FC = () => {
 	const {state, dispatch} = useContext(AdminStore);
+	const itemsSelected = state.cities.filter(city => city.selected === true);
 
 	const onSelectedCity = (city: any) => {
 		if (city.selected === true) {
@@ -25,6 +26,10 @@ const TableComponent: React.FC = () => {
 		if (mode === 'select') dispatch(selectAllCities());
 	};
 
+	const onSearch = (value: string) => {
+		dispatch(filterShowableCities(value));
+	};
+
 	return (
 		<div className='table-container'>
 			<table>
@@ -34,25 +39,25 @@ const TableComponent: React.FC = () => {
 				<tbody>
 					<tr>
 						<td>
-							<SearchBar />
+							<SearchBar onChange={onSearch} />
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<div className='total-container'>
 								<TotalSelect
-									items={state.cities.filter(city => city.selected === false).length}
+									items={state.showableCities.length}
 									onClick={() => onTotalClik('select')}
-									buttonText='select All'
+									buttonText='Select All'
 								/>
 							</div>
 						</td>
 
 						<td>
 							<TotalSelect
-								items={state.cities.filter(city => city.selected === true).length}
+								items={itemsSelected.length}
 								onClick={() => onTotalClik('unSelect')}
-								buttonText='clear'
+								buttonText='Clear'
 							/>
 						</td>
 					</tr>
@@ -60,33 +65,36 @@ const TableComponent: React.FC = () => {
 						<td>
 							{
 								<div className='items-container'>
-									{state.cities &&
-										state.cities.map((city: any) => (
+									{state.showableCities ? (
+										state.showableCities.map((city: any) => (
 											<Card
 												key={city.id}
 												city={city}
 												onSelect={(city: any) => onSelectedCity(city)}
 											/>
-										))}
+										))
+									) : (
+										<div className='not-cities'>
+											<span>no cities</span>
+										</div>
+									)}
 								</div>
 							}
 						</td>
 						<td>
 							{
 								<div className='items-selected'>
-									{state.cities.filter(city => city.selected === true).length > 0 ? (
-										state.cities
-											.filter(city => city.selected === true)
-											.map((city: any) => (
-												<Card
-													key={city.id}
-													city={city}
-													onSelect={(city: any) => onSelectedCity(city)}
-												/>
-											))
+									{itemsSelected.length > 0 ? (
+										itemsSelected.map((city: any) => (
+											<Card
+												key={city.id}
+												city={city}
+												onSelect={(city: any) => onSelectedCity(city)}
+											/>
+										))
 									) : (
 										<div className='not-cities'>
-											<span>no cities</span>
+											<span>no selected cities</span>
 										</div>
 									)}
 								</div>

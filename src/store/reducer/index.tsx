@@ -1,7 +1,8 @@
 import {Action, CitiesState} from '../types';
 
 export const initialState: CitiesState = {
-	cities: []
+	cities: [],
+	showableCities: []
 };
 
 export const reducer = (state: CitiesState, action: Action): CitiesState => {
@@ -9,7 +10,8 @@ export const reducer = (state: CitiesState, action: Action): CitiesState => {
 		case 'ADD_CITIES':
 			return {
 				...state,
-				cities: action.payload
+				cities: action.payload,
+				showableCities: action.payload
 			};
 
 		case 'SELECT_CITY':
@@ -46,6 +48,12 @@ export const reducer = (state: CitiesState, action: Action): CitiesState => {
 					city.selected = true;
 					return city;
 				})
+			};
+
+		case 'FILTER_SHOWABLE_CITIES':
+			return {
+				...state,
+				showableCities: state.cities.filter(city => city.id.includes(action.payload))
 			};
 
 		default:
