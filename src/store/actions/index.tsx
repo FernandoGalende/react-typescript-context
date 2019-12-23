@@ -15,10 +15,10 @@ export function selectCity(city: City): Action {
 	};
 }
 
-export function unSelectCity(city: City): Action {
+export function unSelectCity(cityName: string): Action {
 	return {
 		type: 'UNSELECT_CITY',
-		payload: city
+		payload: cityName
 	};
 }
 

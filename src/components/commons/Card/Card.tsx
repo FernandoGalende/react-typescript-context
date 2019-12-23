@@ -5,10 +5,10 @@ import './Card.scss';
 
 type CardProps = {
 	city: City;
-	onSelect: any;
+	onSelect: Function;
 };
 
-const Card: React.FC<CardProps> = ({city, onSelect}) => {
+export const Card: React.FC<CardProps> = ({city, onSelect}) => {
 	const handleChange = () => {
 		city.selected = !city.selected;
 		onSelect(city);
@@ -27,5 +27,3 @@ const Card: React.FC<CardProps> = ({city, onSelect}) => {
 		</Fragment>
 	);
 };
-
-export default Card;

@@ -2,12 +2,12 @@ import React, {Fragment} from 'react';
 import './SearchBar.scss';
 
 type SearchBarProps = {
-	onChange: any;
+	onChange: Function;
 };
 
-const SearchBar: React.FC<SearchBarProps> = ({onChange}) => {
-	const searchInput = (evt: any) => {
-		onChange(evt.target.value.toLowerCase());
+export const SearchBar: React.FC<SearchBarProps> = ({onChange}) => {
+	const searchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+		onChange(event.target.value.toLowerCase());
 	};
 
 	return (
@@ -21,5 +21,3 @@ const SearchBar: React.FC<SearchBarProps> = ({onChange}) => {
 		</Fragment>
 	);
 };
-
-export default SearchBar;

@@ -4,11 +4,11 @@ import './Total.scss';
 
 type TotalSelectedProps = {
 	items: number;
-	onClick: any;
+	onClick: Function;
 	buttonText: string;
 };
 
-const TotalSelect: React.FC<TotalSelectedProps> = ({items = 0, onClick, buttonText}) => {
+export const TotalSelect: React.FC<TotalSelectedProps> = ({items = 0, onClick, buttonText}) => {
 	return (
 		<Fragment>
 			<div className='total-wrap'>
@@ -20,5 +20,3 @@ const TotalSelect: React.FC<TotalSelectedProps> = ({items = 0, onClick, buttonTe
 		</Fragment>
 	);
 };
-
-export default TotalSelect;

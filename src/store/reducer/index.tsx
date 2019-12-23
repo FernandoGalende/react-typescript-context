@@ -53,7 +53,7 @@ export const reducer = (state: CitiesState, action: Action): CitiesState => {
 		case 'FILTER_SHOWABLE_CITIES':
 			return {
 				...state,
-				showableCities: state.cities.filter(city => city.id.includes(action.payload))
+				showableCities: state.cities.filter(city => city.name.toLocaleLowerCase().includes(action.payload))
 			};
 
 		default:
