@@ -26,20 +26,16 @@ export const Table: React.FC<TableProps> = ({itemsSelected, showableCities, onSe
 				<tr>
 					<td>
 						<div className='total-container'>
-							<TotalSelect
-								items={showableCities.length}
-								onClick={() => onTotalClik('select')}
-								buttonText='Select All'
-							/>
+							<TotalSelect items={showableCities.length} onClick={() => onTotalClik('select')}>
+								Select All
+							</TotalSelect>
 						</div>
 					</td>
 
 					<td>
-						<TotalSelect
-							items={itemsSelected.length}
-							onClick={() => onTotalClik('unSelect')}
-							buttonText='Clear'
-						/>
+						<TotalSelect items={itemsSelected.length} onClick={() => onTotalClik('unSelect')}>
+							Clear
+						</TotalSelect>
 					</td>
 				</tr>
 				<tr>

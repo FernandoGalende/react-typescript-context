@@ -14,8 +14,10 @@ export const SearchBar: React.FC<SearchBarProps> = ({onChange}) => {
 		<Fragment>
 			<div className='search-container'>
 				<div className='text-input'>
-					<input type='text' id='input1' onChange={searchInput} />
-					<label htmlFor='input1'>Search:</label>
+					<input data-testid='input-test' type='text' id='input' onChange={searchInput} />
+					<label data-testid='label-test' htmlFor='input'>
+						Search:
+					</label>
 				</div>
 			</div>
 		</Fragment>

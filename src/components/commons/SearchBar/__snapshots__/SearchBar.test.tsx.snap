@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBar /> match snapshot 1`] = `
+<div>
+  <div
+    class="search-container"
+  >
+    <div
+      class="text-input"
+    >
+      <input
+        data-testid="input-test"
+        id="input"
+        type="text"
+      />
+      <label
+        data-testid="label-test"
+        for="input"
+      >
+        Search:
+      </label>
+    </div>
+  </div>
+</div>
+`;

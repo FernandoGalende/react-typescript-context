@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 
 type TrackVisibilityProps = {
-	children: any;
+	children: React.ReactNode;
 };
 export const TrackVisibility: React.FC<TrackVisibilityProps> = ({children}) => {
 	const options = {
@@ -12,8 +12,8 @@ export const TrackVisibility: React.FC<TrackVisibilityProps> = ({children}) => {
 	useEffect(
 		() => {
 			let cards = document.querySelectorAll('div.image-block');
-			const onChange = (changes: any) => {
-				changes.forEach((change: any) => {
+			const onChange = (changes: IntersectionObserverEntry[]) => {
+				changes.forEach((change: IntersectionObserverEntry) => {
 					if (change.intersectionRatio > 0) {
 						loadCard(change.target);
 						observer.unobserve(change.target);
@@ -21,11 +21,11 @@ export const TrackVisibility: React.FC<TrackVisibilityProps> = ({children}) => {
 				});
 			};
 
-			const loadCard = (card: any) => card.classList.add('show-image');
+			const loadCard = (card: Element) => card.classList.add('show-image');
 			const observer = new IntersectionObserver(onChange, options);
 			cards.forEach(card => observer.observe(card));
 		},
-		[children]
+		[children, options]
 	);
 
 	return <div>{children}</div>;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> match snapshot 1`] = `
+<div>
+  <div
+    class="total-wrap"
+  >
+    <p>
+      4
+       items
+    </p>
+    <div
+      class="button"
+      data-testid="button-test"
+    >
+      click!
+    </div>
+  </div>
+</div>
+`;

@@ -16,12 +16,12 @@ export const Card: React.FC<CardProps> = ({city, onSelect}) => {
 
 	return (
 		<Fragment>
-			<div className='card-container'>
-				<div className='image-block' />
-				<input type='checkbox' onChange={handleChange} checked={city.selected} />
+			<div className='card-container' data-testid='card-test'>
+				<div className='image-block' data-testid='image-test' />
+				<input type='checkbox' onChange={handleChange} checked={city.selected} data-testid='input-test' />
 				<div className='text-block'>
-					<h4>{city.name}</h4>
-					<h5>{city.chineseName}</h5>
+					<h4 data-testid='name-test'>{city.name}</h4>
+					<h5 data-testid='chineseName-test'>{city.chineseName}</h5>
 				</div>
 			</div>
 		</Fragment>
