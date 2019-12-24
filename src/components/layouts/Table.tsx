@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, SearchBar, TotalSelect} from '../commons';
+import {Card, SearchBar, TotalSelect, TrackVisibility} from '../commons';
 import './Table.scss';
 import {City} from '../../store/types/index';
 
@@ -45,40 +45,44 @@ export const Table: React.FC<TableProps> = ({itemsSelected, showableCities, onSe
 				<tr>
 					<td>
 						{
-							<div className='items-container'>
-								{showableCities ? (
-									showableCities.map((city: City) => (
-										<Card
-											key={city.id}
-											city={city}
-											onSelect={(city: City) => onSelectedCity(city)}
-										/>
-									))
-								) : (
-									<div className='not-cities'>
-										<span>no cities</span>
-									</div>
-								)}
-							</div>
+							<TrackVisibility>
+								<div className='items-container'>
+									{showableCities ? (
+										showableCities.map((city: City) => (
+											<Card
+												key={city.id}
+												city={city}
+												onSelect={(city: City) => onSelectedCity(city)}
+											/>
+										))
+									) : (
+										<div className='not-cities'>
+											<span>no cities</span>
+										</div>
+									)}
+								</div>
+							</TrackVisibility>
 						}
 					</td>
 					<td>
 						{
-							<div className='items-selected'>
-								{itemsSelected.length > 0 ? (
-									itemsSelected.map((city: City) => (
-										<Card
-											key={city.id}
-											city={city}
-											onSelect={(city: City) => onSelectedCity(city)}
-										/>
-									))
-								) : (
-									<div className='not-cities'>
-										<span>no selected cities</span>
-									</div>
-								)}
-							</div>
+							<TrackVisibility>
+								<div className='items-selected'>
+									{itemsSelected.length > 0 ? (
+										itemsSelected.map((city: City) => (
+											<Card
+												key={city.id}
+												city={city}
+												onSelect={(city: City) => onSelectedCity(city)}
+											/>
+										))
+									) : (
+										<div className='not-cities'>
+											<span>no selected cities</span>
+										</div>
+									)}
+								</div>
+							</TrackVisibility>
 						}
 					</td>
 				</tr>
