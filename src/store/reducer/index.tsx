@@ -35,7 +35,7 @@ export const reducer = (state: CitiesState, action: Action): CitiesState => {
 		case 'UNSELECT_ALL_CITIES':
 			return {
 				...state,
-				cities: state.cities.map(city => {
+				showableCities: state.showableCities.map(city => {
 					city.selected = false;
 					return city;
 				})
@@ -44,7 +44,7 @@ export const reducer = (state: CitiesState, action: Action): CitiesState => {
 		case 'SELECT_ALL_CITIES':
 			return {
 				...state,
-				cities: state.cities.map(city => {
+				showableCities: state.showableCities.map(city => {
 					city.selected = true;
 					return city;
 				})

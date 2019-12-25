@@ -8,7 +8,7 @@ import './CitiesList.scss';
 
 export const CitiesList: React.FC = () => {
 	const {state, dispatch} = useContext(AdminStore);
-	const itemsSelected = state.cities.filter((city: City) => city.selected === true);
+	const itemsSelected = state.showableCities.filter((city: City) => city.selected === true);
 
 	const onSearch = (value: string) => dispatch(actions.filterShowableCities(value));
 
