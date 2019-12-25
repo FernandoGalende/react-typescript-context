@@ -61,15 +61,15 @@
 	.items-container {
 		box-sizing: border-box;
 		overflow-x: scroll;
-		height: 50vh;
+		height: 45vh;
 		@include largeDesktop {
-			height: 75vh;
+			height: 70vh;
 		}
 		@include mobile {
-			height: 75vh;
+			height: 70vh;
 		}
 		@include tablet {
-			height: 75vh;
+			height: 55vh;
 		}
 	}
 
