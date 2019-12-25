@@ -27,8 +27,8 @@ npm test
 
 ### Public url
 
-[https://orbitaladsandfernandogalende.firebaseapp.com/](https://orbitaladsandfernandogalende.firebaseapp.com/
+https://orbitaladsandfernandogalende.firebaseapp.com/
 
 
 ## Tecnologies
-React TypeScript Context Sass Jest 
+React TypeScript Hooks Context Sass Jest Intersection Observer Trello Firebase
