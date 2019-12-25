@@ -26,16 +26,24 @@ export const Table: React.FC<TableProps> = ({itemsSelected, showableCities, onSe
 				<tr>
 					<td>
 						<div className='total-container'>
-							<TotalSelect items={showableCities.length} onClick={() => onTotalClik('select')}>
+							<TotalSelect
+								selected={itemsSelected.length !== showableCities.length}
+								items={showableCities.length}
+								onClick={() => onTotalClik('select')}>
 								Select All
 							</TotalSelect>
 						</div>
 					</td>
 
 					<td>
-						<TotalSelect items={itemsSelected.length} onClick={() => onTotalClik('unSelect')}>
-							Clear
-						</TotalSelect>
+						<div className='total-container'>
+							<TotalSelect
+								selected={itemsSelected.length > 0}
+								items={itemsSelected.length}
+								onClick={() => onTotalClik('unSelect')}>
+								Clear
+							</TotalSelect>
+						</div>
 					</td>
 				</tr>
 				<tr>
@@ -63,7 +71,7 @@ export const Table: React.FC<TableProps> = ({itemsSelected, showableCities, onSe
 					<td>
 						{
 							<TrackVisibility>
-								<div className='items-selected'>
+								<div className='items-container'>
 									{itemsSelected.length > 0 ? (
 										itemsSelected.map((city: City) => (
 											<Card

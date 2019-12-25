@@ -1,14 +1,27 @@
+@import '../../../styles/partials';
 @import "../../../styles/variables";
+@import "../../../styles/guide-utils";
 
 .total-wrap {
 	box-sizing: border-box;
 	display: flex;
 	align-items: center;
-	margin-left: 3em;
-	.button {
-		margin-left: 3em;
-		color: $Secondary;
-		cursor: pointer;
+	justify-content: space-around;
+	width: 100%;
+
+	p {
 		white-space: nowrap;
 	}
+}
+
+.button {
+	cursor: pointer !important;
+	color: $Secondary;
+	white-space: nowrap;
+}
+
+.disable-button {
+	color: $Grey70;
+	cursor: default;
+	white-space: nowrap;
 }

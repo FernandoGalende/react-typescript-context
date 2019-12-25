@@ -20,8 +20,8 @@ export const Card: React.FC<CardProps> = ({city, onSelect}) => {
 				<div className='image-block' data-testid='image-test' />
 				<input type='checkbox' onChange={handleChange} checked={city.selected} data-testid='input-test' />
 				<div className='text-block'>
-					<h4 data-testid='name-test'>{city.name}</h4>
-					<h5 data-testid='chineseName-test'>{city.chineseName}</h5>
+					<h5 data-testid='name-test'>{city.name}</h5>
+					<h6 data-testid='chineseName-test'>{city.chineseName}</h6>
 				</div>
 			</div>
 		</Fragment>

@@ -9,10 +9,17 @@
 	display: flex;
 	align-items: center;
 	transition: background-color 300ms;
+	@include mobile {
+		height: 3em;
+		padding-left: 8px;
+	}
 	input[type=checkbox] {
 		position: relative;
 		cursor: pointer;
 		margin-left: 30px;
+		@include mobile {
+			margin-left: 8px;
+		}
 	}
 	input[type=checkbox]:before {
 		content: "";
@@ -24,7 +31,11 @@
 		left: 0;
 		border: 2px solid #555555;
 		border-radius: 3px;
-		background-color: white;
+		background-color: $White;
+		@include mobile {
+			width: 10px;
+			height: 10px;
+		}
 	}
 	input[type=checkbox]:checked:after {
 		content: "";
@@ -39,16 +50,25 @@
 		position: absolute;
 		top: 2px;
 		left: 6px;
+		@include mobile {
+			width: 2.5px;
+			height: 5px;
+			top: 2px;
+			left: 4.5px;
+		}
 	}
 	.text-block {
 		margin-left: 30px;
 		h5 {
 			line-height: normal;
-			@extend %text-h5;
+			@extend %text-h4;
 		}
 		h6 {
 			line-height: normal;
-			@extend %text-h6;
+			@extend %text-note;
+		}
+		@include mobile {
+			margin-left: 8px;
 		}
 	}
 	.image-block {
@@ -56,6 +76,10 @@
 		height: 50px;
 		width: 50px;
 		background-color: $Grey10;
+		@include mobile {
+			width: 20px;
+			height: 20px;
+		}
 	}
 	.show-image {
 		background-image: url("../../../assents/china.svg");

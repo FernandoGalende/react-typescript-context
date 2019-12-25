@@ -40,13 +40,13 @@ describe('<SearchBar />', () => {
 		expect(getByTestId('chineseName-test')).toHaveTextContent('fackeChineseName');
 	});
 
-	it('input should fire output function', async () => {
+	it('input should fire output function', () => {
 		const input = getByTestId('input-test');
 		fireEvent.click(input);
 		expect(mockFuntion).toHaveBeenCalled();
 	});
 
-	it('text on input should have properly test', async () => {
+	it('text on input should have properly test', () => {
 		const input = getByTestId('input-test');
 		fireEvent.change(input, {target: {checked: true}});
 		expect(mockFuntion).toHaveBeenCalledTimes(1);

@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> match snapshot 1`] = `
+exports[`<Button select={true}/> match snapshot 1`] = `
 <div>
   <div
     class="total-wrap"
   >
-    <p>
+    <p
+      data-testid="items-test"
+    >
       4
        items
     </p>

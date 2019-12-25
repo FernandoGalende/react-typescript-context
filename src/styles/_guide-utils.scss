@@ -60,6 +60,9 @@
 	@include desktop {
 		font-size: 0.8125rem;
 	}
+	@include mobile {
+		font-size: 0.7rem;
+	}
 }
 
 %text-body {
@@ -73,41 +76,7 @@
 %text-note {
 	@extend %default-color;
 	font-size: 0.6875rem;
-}
-
-// Main colors class helper
-%black {
-	color: $Black;
-}
-
-%grey70 {
-	color: $Grey70;
-}
-
-%grey40 {
-	color: $Grey40;
-}
-
-%grey10 {
-	color: $Grey10;
-}
-
-%background {
-	color: $Background;
-}
-
-%white {
-	color: $White;
-}
-
-%primary {
-	color: $Primary;
-}
-
-%secondary {
-	color: $Secondary;
-}
-
-%error {
-	color: $Error;
+	@include mobile {
+		font-size: 0.6rem;
+	}
 }

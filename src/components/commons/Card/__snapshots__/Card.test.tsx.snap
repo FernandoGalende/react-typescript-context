@@ -17,16 +17,16 @@ exports[`<SearchBar /> match snapshot 1`] = `
     <div
       class="text-block"
     >
-      <h4
+      <h5
         data-testid="name-test"
       >
         fakeName
-      </h4>
-      <h5
+      </h5>
+      <h6
         data-testid="chineseName-test"
       >
         fackeChineseName
-      </h5>
+      </h6>
     </div>
   </div>
 </div>

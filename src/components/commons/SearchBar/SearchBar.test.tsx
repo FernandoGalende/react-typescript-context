@@ -22,7 +22,7 @@ describe('<SearchBar />', () => {
 		expect(getByTestId('input-test')).toBeInTheDocument();
 	});
 
-	it('should label exist', () => {
+	it('should label exist with properly text', () => {
 		expect(getByTestId('label-test')).toHaveTextContent('Search:');
 	});
 

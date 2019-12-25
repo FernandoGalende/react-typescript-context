@@ -1,3 +1,5 @@
+@import '../../../styles/partials';
+
 .cities-container {
 	height: 100vh;
 	width: 100vw;
@@ -11,5 +13,8 @@
 .cities-wrap {
 	height: 80vh;
 	width: 80vw;
-	background-color: royalblue;
+	@include mobile {
+		height: 95vh;
+		width: 95vw;
+	}
 }
