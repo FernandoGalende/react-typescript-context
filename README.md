@@ -1,4 +1,4 @@
-# OrbitalAds coding test
+# Intersection Observer test
 ## Fernando Galende
 
 ### What you need
